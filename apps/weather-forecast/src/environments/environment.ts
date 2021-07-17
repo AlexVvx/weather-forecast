@@ -3,4 +3,8 @@
 
 export const environment = {
   production: false,
+
+  urls: {
+    forecast: "http://localhost:3333/api/forecast",
+  },
 };

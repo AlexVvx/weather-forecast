@@ -10,7 +10,7 @@ export const Home = ({ }) => {
   const [count, setCount] = useState(0);
   return (<div>
     <p>clicked {count} times</p>
-    <button onClick={() => setCount(count + 1)}>click</button>
+    <button onClick={() => dispatch({type: 'USER_FETCH_REQUESTED', payload: {userId: 'test'}})}>click</button>
   </div>)
 }
 
