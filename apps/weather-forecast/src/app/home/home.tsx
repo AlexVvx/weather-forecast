@@ -1,7 +1,6 @@
 import './home.module.scss';
 import { useState, useEffect } from 'react';
 
-/* eslint-disable-next-line */
 export interface HomeProps { }
 
 export const Home = ({ }) => {
@@ -12,17 +11,7 @@ export const Home = ({ }) => {
   return (<div>
     <p>clicked {count} times</p>
     <button onClick={() => setCount(count + 1)}>click</button>
-    {/* pogoda.by */}
   </div>)
 }
-
-// export function Home(props: HomeProps) {
-//   return (
-//     <div>
-//       {/* https://6.pogoda.by/ */}
-//       <h1>Welcome to home!</h1>
-//     </div>
-//   );
-// }
 
 export default Home;
