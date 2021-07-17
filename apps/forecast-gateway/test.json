@@ -1,0 +1,10 @@
+{
+    "forecast": {
+        "forecast/data-source?city=Minsk&period=3": "will get city information for current date from the data source based on period (max 3 days), returns object",
+        "forecast?city=Minsk": "will return weather forecast from default data source for today, returns object"
+    },
+    "forecast-history": {
+        "forecast-history?city=Minsk&startDate=2021-01-01&endDate=2021-01-05": "get forecast history between the dates, returns list",
+        "forecast-history?city=Minsk&date=2021-01-01": "post forecast for mentioned day for mentioned city"
+    }
+}
