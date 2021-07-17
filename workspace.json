@@ -1,6 +1,64 @@
 {
   "version": 2,
   "projects": {
+    "forecast-gateway": {
+      "root": "apps/forecast-gateway",
+      "sourceRoot": "apps/forecast-gateway/src",
+      "projectType": "application",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/node:build",
+          "outputs": [
+            "{options.outputPath}"
+          ],
+          "options": {
+            "outputPath": "dist/apps/forecast-gateway",
+            "main": "apps/forecast-gateway/src/main.ts",
+            "tsConfig": "apps/forecast-gateway/tsconfig.app.json",
+            "assets": [
+              "apps/forecast-gateway/src/assets"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "optimization": true,
+              "extractLicenses": true,
+              "inspect": false,
+              "fileReplacements": [
+                {
+                  "replace": "apps/forecast-gateway/src/environments/environment.ts",
+                  "with": "apps/forecast-gateway/src/environments/environment.prod.ts"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "executor": "@nrwl/node:execute",
+          "options": {
+            "buildTarget": "forecast-gateway:build"
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/forecast-gateway/**/*.ts"
+            ]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/apps/forecast-gateway"
+          ],
+          "options": {
+            "jestConfig": "apps/forecast-gateway/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
     "weather-forecast": {
       "root": "apps/weather-forecast",
       "sourceRoot": "apps/weather-forecast/src",
