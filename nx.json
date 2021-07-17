@@ -27,6 +27,9 @@
     ]
   },
   "projects": {
+    "forecast-gateway": {
+      "tags": []
+    },
     "weather-forecast": {
       "tags": []
     },
