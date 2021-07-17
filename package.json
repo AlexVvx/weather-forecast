@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "nx": "nx",
-    "start": "nx serve",
+    "start": "npm run start:gateway",
     "start:ui": "npm run start",
     "start:gateway": "nx serve forecast-gateway",
     "build": "nx build",
