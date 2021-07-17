@@ -1,28 +1,18 @@
-import './home.module.scss';
-import { useState, useEffect } from 'react';
+import "./home.module.scss";
+import { Landing } from "../landing/landing";
+import { GetForecastForm } from "../get-forecast-form/get-forecast-form";
+import { ForecastHistory } from "../forecast-history/forecast-history";
 
-/* eslint-disable-next-line */
-export interface HomeProps { }
+export interface HomeProps {}
 
-export const Home = ({ }) => {
-  useEffect(() => {
-    document.title = `You clicked ${count} times`
-  })
-  const [count, setCount] = useState(0);
-  return (<div>
-    <p>clicked {count} times</p>
-    <button onClick={() => setCount(count + 1)}>click</button>
-    {/* pogoda.by */}
-  </div>)
-}
-
-// export function Home(props: HomeProps) {
-//   return (
-//     <div>
-//       {/* https://6.pogoda.by/ */}
-//       <h1>Welcome to home!</h1>
-//     </div>
-//   );
-// }
+export const Home = ({}) => {
+  return (
+    <div>
+      <Landing />
+      <GetForecastForm />
+      <ForecastHistory />
+    </div>
+  );
+};
 
 export default Home;
